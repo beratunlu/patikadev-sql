@@ -10,8 +10,8 @@ select * from film where replacement_cost between 12.99 and 16.98
 
 select * from actor where first_name in ('Penolope','Nick','Ed')
 
---Ödev1'in 3. Ödev konusu:
+--Ödev2'in 3. Ödev konusu:
 
---ilm tablosunda bulunan tüm sütunlardaki verileri rental_rate 0.99, 2.99, 4.99 VE replacement_cost 12.99, 15.99, 28.99 olma koşullarıyla sıralayınız. ( IN operatörünü kullanınız.)
+--film tablosunda bulunan tüm sütunlardaki verileri rental_rate 0.99, 2.99, 4.99 VE replacement_cost 12.99, 15.99, 28.99 olma koşullarıyla sıralayınız. ( IN operatörünü kullanınız.)
 
 select * from film where rental_rate in (0.99, 2.99, 4.99) and replacement_cost in (12.99, 15.99, 28.99)
