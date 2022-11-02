@@ -27,4 +27,14 @@ select avg(population) from city
 where District = 'California';
 
 
+/* Question : 3 - Query the NAME field for all American cities in the CITY table with populations larger than 120000. The CountryCode for America is USA. 
+
+Answer :  */  
+
+select NAME from CITY where COUNTRYCODE='USA' and POPULATION > 120000;
+
+
+
+
+
  
