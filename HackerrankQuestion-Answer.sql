@@ -12,14 +12,18 @@ population number
 
 */
 
-/* Question : 1 - Query the difference between the maximum and minimum populations in CITY.
+/* 
+
+Question : 1 - Query the difference between the maximum and minimum populations in CITY.
 
 Answer :  */  
 
 select abs(max(population) - min(population)) from city
 
 
-/* Question : 2 - Query the average population of all cities in CITY where District is California.
+/* 
+
+Question : 2 - Query the average population of all cities in CITY where District is California.
 
 Answer :  */  
 
@@ -27,7 +31,9 @@ select avg(population) from city
 where District = 'California';
 
 
-/* Question : 3 - Query the NAME field for all American cities in the CITY table with populations larger than 120000. The CountryCode for America is USA. 
+/* 
+
+Question : 3 - Query the NAME field for all American cities in the CITY table with populations larger than 120000. The CountryCode for America is USA. 
 
 Answer :  */  
 
@@ -48,7 +54,9 @@ long_w int
 
 */
 
-/* Question : 4 Find the difference between the total number of CITY entries in the table and the number of distinct CITY entries in the table. 
+/* 
+
+Question : 4 Find the difference between the total number of CITY entries in the table and the number of distinct CITY entries in the table. 
 For example, if there are three records in the table with CITY values 'New York', 'New York', 'Bengalaru', there are 2 different city names: 'New York' and 'Bengalaru'. 
 The query returns 1 , because total number of records - number of unique city names  = 3 - 2  = 1
 
@@ -57,7 +65,48 @@ The query returns 1 , because total number of records - number of unique city na
 select abs(count(DISTINCT city) - count(city)) from station
 
 
+/* 
+
+Question : 5 Query the list of CITY names from STATION that either do not start with vowels or do not end with vowels. Your result cannot contain duplicates.
+
+*/
+
+select distinct city from station
+where city not like '[aeiouAEIOU]%[aeiouAEIOU]'
 
 
+/*
+
+Question : 6 Query the Name of any student in STUDENTS who scored higher than Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+*/
+
+select name from students
+where marks > 75 
+order by right(name,3) , ID
+
+
+
+/* 
+
+Question : 7 Query the smallest Northern Latitude (LAT_N) from STATION that is greater than 38.7780.  Round your answer to 4  decimal places.
+
+*/
+
+
+select format(min(lat_n ),'N4') from station
+where lat_n > 38.7780
+
+
+/* 
+
+Question : 8 Query the Western Longitude (LONG_W)where the smallest Northern Latitude (LAT_N) in STATION is greater than 38.7780. Round your answer to 4 decimal places.
+
+*/
+
+select format(round(long_w , 4 ) , 'N4') from station
+where lat_n  = (select min(lat_n) from station 
+where lat_n > 38.7780) 
+order by lat_n asc
 
  
