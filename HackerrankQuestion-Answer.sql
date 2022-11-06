@@ -40,6 +40,16 @@ Answer :  */
 select NAME from CITY where COUNTRYCODE='USA' and POPULATION > 120000;
 
 
+
+/* 
+
+Question : 4 - Query the total population of all cities in CITY where District is California.  
+
+Answer :  */  
+
+select sum(population) from city
+where district = 'California'
+
 /* database schema
 
 table station (
@@ -56,7 +66,7 @@ long_w int
 
 /* 
 
-Question : 4 Find the difference between the total number of CITY entries in the table and the number of distinct CITY entries in the table. 
+Question : 5 Find the difference between the total number of CITY entries in the table and the number of distinct CITY entries in the table. 
 For example, if there are three records in the table with CITY values 'New York', 'New York', 'Bengalaru', there are 2 different city names: 'New York' and 'Bengalaru'. 
 The query returns 1 , because total number of records - number of unique city names  = 3 - 2  = 1
 
@@ -67,7 +77,7 @@ select abs(count(DISTINCT city) - count(city)) from station
 
 /* 
 
-Question : 5 Query the list of CITY names from STATION that either do not start with vowels or do not end with vowels. Your result cannot contain duplicates.
+Question : 6 Query the list of CITY names from STATION that either do not start with vowels or do not end with vowels. Your result cannot contain duplicates.
 
 */
 
@@ -77,7 +87,7 @@ where city not like '[aeiouAEIOU]%[aeiouAEIOU]'
 
 /*
 
-Question : 6 Query the Name of any student in STUDENTS who scored higher than Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+Question : 7 Query the Name of any student in STUDENTS who scored higher than Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
 
 */
 
@@ -89,7 +99,7 @@ order by right(name,3) , ID
 
 /* 
 
-Question : 7 Query the smallest Northern Latitude (LAT_N) from STATION that is greater than 38.7780.  Round your answer to 4  decimal places.
+Question : 8 Query the smallest Northern Latitude (LAT_N) from STATION that is greater than 38.7780.  Round your answer to 4  decimal places.
 
 */
 
@@ -100,7 +110,7 @@ where lat_n > 38.7780
 
 /* 
 
-Question : 8 Query the Western Longitude (LONG_W)where the smallest Northern Latitude (LAT_N) in STATION is greater than 38.7780. Round your answer to 4 decimal places.
+Question : 9 Query the Western Longitude (LONG_W)where the smallest Northern Latitude (LAT_N) in STATION is greater than 38.7780. Round your answer to 4 decimal places.
 
 */
 
