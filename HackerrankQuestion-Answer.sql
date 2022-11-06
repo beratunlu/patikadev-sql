@@ -14,6 +14,15 @@ population number
 
 /* 
 
+Question : 0 - Query a list of CITY names from STATION for cities that have an even ID number. Print the results in any order, but exclude duplicates from the answer. 
+
+Answer :  */  
+
+select distinct(city) from station
+where id % 2 = 0 
+
+/* 
+
 Question : 1 - Query the difference between the maximum and minimum populations in CITY.
 
 Answer :  */  
