@@ -142,3 +142,16 @@ where lat_n < 137.2345
 order by lat_n desc
 limit 1
  
+ 
+ /* 
+ 
+ Question : 11 Weather Observation Station 18
+ 
+ 
+ */
+ 
+ 
+ select ROUND(ABS(Max(LAT_N) - MIN(LAT_N))
+        + ABS(MAX(LONG_W)- MIN(LONG_W)),4 )
+        
+FROM STATION
